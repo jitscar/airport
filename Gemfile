@@ -12,13 +12,19 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'puma'
+gem 'aasm'
+gem 'paper_trail'
 
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.6'
+  gem 'factory_girl_rails', '~> 4.8'
+  gem 'faker', '~> 1.7'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+gem 'simplecov', require: false, group: :test
