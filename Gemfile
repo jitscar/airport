@@ -14,9 +14,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'aasm'
 gem 'paper_trail'
+gem 'sidekiq'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_girl_rails', '~> 4.8'
   gem 'faker', '~> 1.7'

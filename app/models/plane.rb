@@ -14,7 +14,7 @@ class Plane < ActiveRecord::Base
       transitions from: :in_the_room, to: :scheduled
     end
 
-    event :start_flying do
+    event :add_to_departed do
       transitions from: :scheduled, to: :departed
     end
   end

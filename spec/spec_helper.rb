@@ -1,4 +1,5 @@
 require 'aasm/rspec'
+require 'sidekiq/testing'
 
 require 'simplecov'
 SimpleCov.start 'rails'
@@ -13,4 +14,8 @@ RSpec.configure do |config|
   end
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
+
+  config.before(:each) do
+    Sidekiq::Worker.clear_all
+  end
 end

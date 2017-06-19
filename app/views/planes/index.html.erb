@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Departures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Flight</th>
+      <th>Current status</th>
+      <th>Status history</th>
+      <th>Accept flying</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planes.each do |plane| %>
+      <tr>
+        <td><%= plane.flight %></td>
+        <td><%= plane.status %></td>
+        <td><%= simple_format(plane.status_history) %></td>
+        <td><%= check_box_tag 'accept' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Start flying', flyings_path %>

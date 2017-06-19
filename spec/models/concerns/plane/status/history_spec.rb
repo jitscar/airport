@@ -22,7 +22,7 @@ RSpec.describe Concerns::Plane::Status::History, type: :model do
     context 'when plane started flying' do
       before do
         plane.add_to_schedule!
-        plane.start_flying!
+        plane.add_to_departed!
       end
 
       it 'returns message for changing to departed status' do

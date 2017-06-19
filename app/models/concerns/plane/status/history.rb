@@ -19,9 +19,9 @@ module Concerns::Plane::Status::History
     new = statuses[1]
 
     if old.nil?
-      "In the room since #{version.created_at}\\n"
+      "In the room since #{version.created_at.strftime('%m/%d/%Y, %H:%M')}\n"
     else
-      "Has changed his status from #{old} to #{new} in #{version.created_at}\\n"
+      "Has changed his status from #{old} to #{new} in #{version.created_at.strftime('%H:%M')}\n"
     end
   end
 end
