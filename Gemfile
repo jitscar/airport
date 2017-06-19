@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.8'
-gem 'pg'
+gem 'pg', '~> 0.21'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -11,15 +11,15 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'puma'
-gem 'aasm'
-gem 'paper_trail'
-gem 'sidekiq'
-gem 'sidekiq-limit_fetch'
-gem 'foreman'
+gem 'puma', '~> 3.9'
+gem 'aasm', '~> 4.12'
+gem 'paper_trail', '~> 7.0'
+gem 'sidekiq', '~> 5.0'
+gem 'sidekiq-limit_fetch', '~> 3.4'
+gem 'foreman', '~> 0.84'
 
 group :development, :test do
-  gem 'pry-byebug'
+  gem 'pry-byebug', '~> 3.4'
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_girl_rails', '~> 4.8'
   gem 'faker', '~> 1.7'
@@ -31,6 +31,6 @@ group :development do
 end
 
 group :test do
-  gem 'simplecov', require: false
+  gem 'simplecov', '~> 0.14', require: false
   gem 'database_cleaner', '~> 1.6'
 end
