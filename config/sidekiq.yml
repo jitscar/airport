@@ -1,0 +1,5 @@
+:queues:
+  - default
+  - flying
+:limits:
+  flying: 1

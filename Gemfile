@@ -15,6 +15,8 @@ gem 'puma'
 gem 'aasm'
 gem 'paper_trail'
 gem 'sidekiq'
+gem 'sidekiq-limit_fetch'
+gem 'foreman'
 
 group :development, :test do
   gem 'pry-byebug'

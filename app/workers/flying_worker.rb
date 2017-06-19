@@ -1,5 +1,6 @@
 class FlyingWorker
   include Sidekiq::Worker
+  sidekiq_options retry: false, queue: 'flying'
 
   def perform(plane_id)
     plane = Plane.find(plane_id)
