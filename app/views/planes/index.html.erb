@@ -1,13 +1,13 @@
-<h1>Planes</h1>
+<h1><%= t '.title' %></h1>
 
 <%= form_tag flyings_path, method: :create, remote: true do %>
   <table>
     <thead>
       <tr>
-        <th>Flight</th>
-        <th>Current status</th>
-        <th>Status history</th>
-        <th>Accept flying</th>
+        <th><%= t '.flight' %></th>
+        <th><%= t '.status' %></th>
+        <th><%= t '.status_history' %></th>
+        <th><%= t '.accept' %></th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -16,12 +16,12 @@
       <% @planes.each do |plane| %>
         <tr>
           <td><%= plane.flight %></td>
-          <td><%= plane.status %></td>
+          <td><%= t "plane.status.#{plane.status}" %></td>
           <td><%= simple_format(plane.status_history) %></td>
           <td><%= check_box_tag 'plane_ids[]', plane.id, false, disabled: !plane.in_the_room? %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <%= submit_tag 'Start flying' %>
+  <%= submit_tag t '.submit' %>
 <% end %>

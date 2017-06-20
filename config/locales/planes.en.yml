@@ -1,0 +1,9 @@
+en:
+  planes:
+    index:
+      title: Planes
+      flight: Flight
+      status: Current status
+      status_history: Status history
+      accept: Accept flying
+      submit: Start flying

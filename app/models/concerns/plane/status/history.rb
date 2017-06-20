@@ -15,13 +15,27 @@ module Concerns::Plane::Status::History
 
   def add_status_content(version)
     statuses = version.changeset['status']
-    old = statuses[0]
-    new = statuses[1]
+    old_status = statuses[0]
+    new_status = statuses[1]
 
-    if old.nil?
-      "In the room since #{version.created_at.strftime('%m/%d/%Y, %H:%M')}\n"
+    # При создании первой версии старый статус не определен
+    if old_status.nil?
+      get_init_content(version.created_at) + "\n"
     else
-      "Has changed his status from #{old} to #{new} in #{version.created_at.strftime('%H:%M')}\n"
+      get_updating_content(old_status, new_status, version.created_at) + "\n"
     end
+  end
+
+  def get_init_content(date_time)
+    I18n.t('plane.status_history.content.init',
+           status: I18n.t('plane.status.in_the_room'),
+           date: I18n.l(date_time, format: :default_datetime))
+  end
+
+  def get_updating_content(old_status, new_status, date_time)
+    I18n.t('plane.status_history.content.update',
+           from: I18n.t("plane.status.#{old_status}"),
+           to: I18n.t("plane.status.#{new_status}"),
+           time: I18n.l(date_time, format: :only_time))
   end
 end

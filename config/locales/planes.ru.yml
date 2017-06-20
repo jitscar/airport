@@ -1,0 +1,9 @@
+ru:
+  planes:
+    index:
+      title: Список самолетов
+      flight: Рейс
+      status: Текущий статус
+      status_history: История смены статусов
+      accept: Подтвердить взлёт
+      submit: Отправить на взлёт

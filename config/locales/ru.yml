@@ -1,0 +1,14 @@
+ru:
+  time:
+    formats:
+      default_datetime: "%d.%m.%Y, %H:%M"
+      only_time: "%H:%M"
+  plane:
+    status:
+      in_the_room: В ангаре
+      scheduled: Ожидает вылета
+      departed: Взлетел
+    status_history:
+      content:
+        init: ! '%{status} с %{date}'
+        update: Изменил статус с %{from} на %{to} в %{time}
