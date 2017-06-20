@@ -7,7 +7,7 @@ ru:
     status:
       in_the_room: В ангаре
       scheduled: Ожидает вылета
-      departed: Взлетел
+      departed: Вылетел
     status_history:
       content:
         init: ! '%{status} с %{date}'

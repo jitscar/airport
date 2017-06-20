@@ -1,0 +1,22 @@
+default: &default
+  adapter:  postgresql
+  encoding: unicode
+  host: localhost
+  timeout: 5000
+
+development:
+  <<: *default
+  database: airport_development
+  username: username
+  password: password
+
+test:
+  <<: *default
+  database: airport_test
+  username: username
+  password: password
+
+production:
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
